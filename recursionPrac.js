@@ -88,8 +88,8 @@
 //
 // console.log(splitter('A B', ''));
 
-//Problem 6
-//input - number
+//Problem 6 ( have to check power)
+//input - number, power
 //output - binary rep of number
 //recursive input - number minus converted number of binary rep
 //recursive output - binary rep of number
@@ -103,3 +103,61 @@
 // }
 //
 // console.log(binary(25));
+
+
+//Problem 7
+//input - string, prefix
+//output - array of anagrams for that string
+//recursive input - letters not used and the prefix
+//recursive output - prefix + recursive function
+// function anagram(str,prefix){
+//   if(str.length <= 1){
+//     //should log out anagram
+//     console.log(prefix+str);
+//   }
+//   else{
+//     for(let i = 0; i< str.length; i++){
+//       let x = str.substring(i,i+1);
+//       anagram(str.slice(0,i) + str.slice(i+1), x+prefix);
+//     }
+//   } 
+// }
+
+// anagram('east', '');
+
+//Problem 8
+//input - arr of obj, string 
+//output - obj of obj (tree)
+//recursive input - initial array, current item id ( new parent)
+//recursive output - object
+// const AnimalHierarchy = [
+//     {id: 'Animals','Parent': null},
+//     {id: 'Mammals','Parent': 'Animals'},
+//     {id: 'Dogs','Parent':'Mammals' },
+//     {id: 'Cats','Parent':'Mammals' },
+//     {id: 'Golden Retriever','Parent': 'Dogs'},
+//     {id: 'Husky','Parent':'Dogs' },
+//     {id: 'Bengal','Parent':'Cats' }
+// ]
+
+// // ==============================
+// function traverse(AnimalHierarchy, parent) {
+//     let node = {};
+//     AnimalHierarchy.filter(item => item.Parent === parent)
+//                    .forEach(item => node[item.id] = traverse(AnimalHierarchy, item.id));
+//     return node;  
+// }
+// console.log(traverse(AnimalHierarchy, null));
+
+//Problem 9
+//input - number
+//output - result factoral number
+//recursive input - num-1
+//recursive output - num * recursive(num-1)
+// function factorial(num){
+//   if(num===1){
+//     return 1;
+//   }
+//   return num * factorial(num-1);
+// }
+// factorial(5);
