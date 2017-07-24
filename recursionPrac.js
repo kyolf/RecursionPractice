@@ -120,13 +120,13 @@
 //       let x = str.substring(i,i+1);
 //       anagram(str.slice(0,i) + str.slice(i+1), x+prefix);
 //     }
-//   } 
+//   }
 // }
 
 // anagram('east', '');
 
 //Problem 8
-//input - arr of obj, string 
+//input - arr of obj, string
 //output - obj of obj (tree)
 //recursive input - initial array, current item id ( new parent)
 //recursive output - object
@@ -145,7 +145,7 @@
 //     let node = {};
 //     AnimalHierarchy.filter(item => item.Parent === parent)
 //                    .forEach(item => node[item.id] = traverse(AnimalHierarchy, item.id));
-//     return node;  
+//     return node;
 // }
 // console.log(traverse(AnimalHierarchy, null));
 
@@ -161,3 +161,73 @@
 //   return num * factorial(num-1);
 // }
 // factorial(5);
+
+//Problem 10
+// input - number
+// output - fiboncai of current number
+// input recursive - number
+// output recurisive - number + recursive(number)
+
+// function fibonccai(num){
+//   if(num <= 0)
+//     return 0;
+//   if(num === 1)
+//     return 1;
+//   return fibonccai(num - 1) + fibonccai(num -2);
+// }
+// console.log(fibonccai(5));
+
+//Problem 11
+//input - array of objects
+//output - organizational chart
+//input recursive - array of Objects and array id
+//output recursive - current parent object with child key value pairs
+
+// let chart = [
+//   {id: 'Zuckerberg', Boss: null},
+//   {id: 'Schroepfer', Boss: 'Zuckerberg'},
+//   {id: 'Bosworth', Boss: 'Schroepfer'},
+//   {id: 'Steve', Boss: 'Bosworth'},
+//   {id: 'Kyle', Boss: 'Bosworth'},
+//   {id: 'Andra', Boss: 'Bosworth'},
+//   {id: 'Zhao', Boss: 'Schroepfer'},
+//   {id: 'Richie', Boss: 'Zhao'},
+//   {id: 'Sophia', Boss: 'Zhao'},
+//   {id: 'Jen', Boss: 'Zhao'},
+//   {id: 'Schrnge', Boss: 'Zuckerberg'},
+//   {id: 'VanDyck', Boss: 'Schrnge'},
+//   {id: 'Sabrina', Boss: 'VanDyck'},
+//   {id: 'Michelle', Boss: 'VanDyck'},
+//   {id: 'Josh', Boss: 'VanDyck'},
+//   {id: 'Swain', Boss: 'Schrnge'},
+//   {id: 'Blanch', Boss: 'Swain'},
+//   {id: 'Tom', Boss: 'Swain'},
+//   {id: 'Joe', Boss: 'Swain'},
+//   {id: 'Sandberg', Boss: 'Zuckerberg'},
+//   {id: 'Goler', Boss: 'Sandberg'},
+//   {id: 'Eddie', Boss: 'Goler'},
+//   {id: 'Julie', Boss: 'Goler'},
+//   {id: 'Annie', Boss: 'Goler'},
+//   {id: 'Hernandez', Boss: 'Sandberg'},
+//   {id: 'Rowi', Boss: 'Hernandez'},
+//   {id: 'Inga', Boss: 'Hernandez'},
+//   {id: 'Morgan', Boss: 'Hernandez'},
+//   {id: 'Moissinac', Boss: 'Sandberg'},
+//   {id: 'Amy', Boss: 'Moissinac'},
+//   {id: 'Chuck', Boss: 'Moissinac'},
+//   {id: 'Vinni', Boss: 'Moissinac'},
+//   {id: 'Kelly', Boss: 'Sandberg'},
+//   {id: 'Eric', Boss: 'Kelly'},
+//   {id: 'Ana', Boss: 'Kelly'},
+//   {id: 'Wes', Boss: 'Kelly'},
+// ];
+//
+//
+// function orgChart(chart, boss){
+//   let node = {};
+//   chart.filter(people => people.Boss === boss)
+//     .forEach(people => node[people.id] = orgChart(chart, people.id));
+//   return node;
+// }
+//
+// console.log(JSON.stringify(orgChart(chart, null),null, 4));
