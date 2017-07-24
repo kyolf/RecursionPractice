@@ -75,3 +75,31 @@
 // nthTriangular(9);
 
 //Problem 5
+//input - string, what to take out
+//output - array without what we took out
+//recursive input - string, everything after what we take out
+//recurisve output - array of strings without what we took out
+
+// function splitter(str, split){
+//   if(str.indexOf(split) === -1 || split === '')
+//     return [str];
+//   return [str.slice(0, str.indexOf(split)), ...splitter(str.slice(str.indexOf(split)+ 1), split)];
+// }
+//
+// console.log(splitter('A B', ''));
+
+//Problem 6
+//input - number
+//output - binary rep of number
+//recursive input - number minus converted number of binary rep
+//recursive output - binary rep of number
+// function binary(num, power = 7){
+//   if(num === 0)
+//     return '';
+//   else if( num - Math.pow(2, power) < 0)
+//     return '0' + binary(num, power - 1);
+//   else
+//     return '1' + binary(num - Math.pow(2, power), power - 1);
+// }
+//
+// console.log(binary(25));
